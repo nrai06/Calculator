@@ -1,76 +1,30 @@
-# Calculator
-// Java program for simple calculator
-
-import java.io.*;
-import java.lang.*;
-import java.lang.Math;
+#calculator
 import java.util.Scanner;
-public class BasicCalculator {
-
-	public static void main(String[] args)
-	{
-		// stores two numbers
-		double num1, num2;
-
-		// Take input from the user
-		Scanner sc = new Scanner(System.in);
-
-		System.out.println("Enter the numbers");
-
-		// take the inputs
-		num1 = sc.nextDouble();
-
-		num2 = sc.nextDouble();
-
-		System.out.println("Enter the operator (+,-,*,/)");
-
-		char op = sc.next().charAt(0);
-
-		double o = 0;
-
-		switch (op) {
-
-		// case to add two numbers
-		case '+':
-
-			o = num1 + num2;
-
-			break;
-
-		// case to subtract two numbers
-		case '-':
-
-			o = num1 - num2;
-
-			break;
-
-		// case to multiply two numbers
-		case '*':
-
-			o = num1 * num2;
-
-			break;
-
-		// case to divide two numbers
-		case '/':
-
-			o = num1 / num2;
-
-			break;
-
-		default:
-
-			System.out.println("You enter wrong input");
-
-			break;
-		}
-
-		System.out.println("The final result:");
-
-		System.out.println();
-
-		// print the final result
-		System.out.println(num1 + " " + op + " " + num2
-						+ " = " + o);
-	}
+public class Calculator {
+   public static void main(String[] args) {
+      double num1;
+      double num2;
+      double ans;
+      char op;
+      Scanner reader = new Scanner(System.in);
+      System.out.print("Enter two numbers: ");
+      num1 = reader.nextDouble();
+      num2 = reader.nextDouble();
+      System.out.print("\nEnter an operator (+, -, *, /): ");
+      op = reader.next().charAt(0);
+      switch(op) {
+         case '+': ans = num1 + num2;
+            break;
+         case '-': ans = num1 - num2;
+            break;
+         case '*': ans = num1 * num2;
+            break;
+         case '/': ans = num1 / num2;
+            break;
+      default: System.out.printf("Error! Enter correct operator");
+         return;
+      }
+      System.out.print("\nThe result is given as follows:\n");
+      System.out.printf(num1 + " " + op + " " + num2 + " = " + ans);
+   }
 }
